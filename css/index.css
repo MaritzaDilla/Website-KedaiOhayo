@@ -1,0 +1,688 @@
+:root {
+    --primary: #FF9149;
+    --bg: #ffffff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg);
+    color: #9d0e0e;
+    font-weight: bold;
+  
+  }
+  
+  
+  /*  Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1, 4rem 7%;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid #513c28;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+  
+  .navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #9d0e0e;
+    font-style: italic;
+  }
+  
+  .navbar .navbar-logo span {
+    color: var(--primary);
+  }
+  
+  .navbar .navbar-nav a {
+    color:  #9d0e0e;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 1rem;
+  }
+  
+  .navbar .navbar-nav a:hover {
+    color: var(--primary);
+  }
+  
+  .navbar .navbar-nav a:after {
+    content: "";
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+  }
+  
+  .navbar .navbar-nav a:hover:after {
+    transform: scaleX(0.5);
+  }
+  
+  .navbar .navbar-extra a {
+    color: #fff;
+    margin: 0.5rem;
+  }
+  
+  .navbar .navbar-extra a:hover {
+    color: var(--primary);
+  }
+  
+  #hamburger-menu {
+    display: none;
+  }
+  
+  /* Hero Section */
+  .hero{
+    min-height:  100vh;
+    display: flex;
+    align-items: center;
+    background-image : url('../img/Banner1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg,rgba(1, 1, 3, 1) 8%,rgba(255, 255, 255, 0) 50%);
+  }
+  
+  .hero .content{
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+  }
+  
+  .hero .content h1{
+    font-size: 5em;
+    color: #9d0e0e;
+    text-shadow: 1px 1 px 3 px rgba(1, 1, 3, 0.5);
+    line-height: 1.2;
+  }
+  
+  .hero .content h1 span{
+    color: var(--primary);
+  }
+  
+  .hero .content p{
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-weight: 100;
+    text-shadow: 1px 1 px 3 px rgba(1, 1, 3, 0.5);
+    mix-blend-mode: difference;
+  }
+  
+  .hero .content .cta{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: #9d0e0e;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  }
+
+  .hero .content .cta:last-child {
+    margin-left: 1.5rem;
+  }
+  
+  /*About Section*/
+  .about,
+  .menu, 
+  .contact {
+    padding: 6rem 7% 1.4rem;
+  }
+  
+  .about h2,
+  .menu h2,
+  .contact h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+  }
+  
+  .about h2 span,
+  .menu h2 span,
+  .contact h2 span {
+    color: var(--primary);
+  }
+  
+  .about .row {
+    display: flex;
+  }
+  
+  .about .row .about-img {
+    flex: 1 1 45rem;
+  }
+  
+  .about .row .about-img {
+    width: 100%;
+  }
+  
+  .about .row .content {
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+  }
+  
+  .about .row .content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.rem;
+  }
+  .about .row .content p {
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    list-style: 1.6;
+  }
+  
+  
+  /* Menu Section*/
+  .menu h2,
+  .contact h2 {
+    margin-bottom: 1rem;
+  }
+  .menu p,
+  .contact p {
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    font-weight: bold;
+    line-height: 1.6;
+  }
+  
+  .menu .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    justify-content: center;
+  }
+  
+  .menu .row .menu-card {
+    text-align: center;
+    padding-bottom: 4rem;
+  }
+  
+  .menu .row .menu-card img{
+    border-radius: 50%;
+    width: 80%;
+  }
+  .menu .row .menu-card .menu-card-title {
+    margin-top :1rem auto 0.5rem;
+  }
+  
+  /* Contact Section */
+  .contact .row {
+    display: flex;
+    margin-top: 2rem;
+    background-color: #000000;
+  }
+  
+  .contact .row .map  {
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .contact .row form{
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  
+  .contact .row form .input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: var(--bg);
+    border: 1px solid #eee;
+    padding-left: 2rem;
+  }
+  
+  .contact .row form .input-group input {
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    background: none;
+    color: #fff;
+  }
+  
+  .contact .row form .btn {
+    margin-top: 3rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size:  1.7rem;
+    color: #fff;
+    background-color: var(--primary);
+    cursor: pointer;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--primary);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+  }
+  
+  footer .socials {
+    padding: 1rem 0 3rem;
+  }
+  
+  footer .socials a{
+    color: #fff;
+    margin: 1rem;
+  }
+  
+  footer .socials a:hover,
+  footer .links a:hover {
+    color: var(--bg);
+  }
+  
+  footer .links {
+    margin-bottom: 1.4rem;
+  }
+  
+  footer .credit  {
+    font-size: 0.8rem;
+    
+  }
+  
+  footer .credit a  {
+    color: var(--bg);
+    font-weight: 700;
+  }
+  
+  /* Media Queries*/
+  
+  /*Laptop*/
+  @media (max-width: 1366px) {
+    html {
+      font-size: 75%;
+    }
+  }
+  
+  /*Tablet*/
+  @media (max-width: 768px) {
+    html {
+      font-size: 62.5%;
+    }
+  
+    #hamburger-menu {
+      display: inline-block;
+    }
+  
+    .navbar .navbar-nav {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      background-color: #fff;
+      width: 30rem;
+      height: 100vh;
+      transition: 0.3s;
+    }
+  
+    .navbar .navbar-nav.active{
+      right: 0;
+    }
+  
+    .navbar .navbar-nav a {
+      color: var(--bg);
+      display: block;
+      margin: 1.5rem;
+      padding: 0.5rem;
+      font-size: 2rem;
+    }
+  
+  .navbar .navbar-nav a::after{
+    transform-origin: 0 0;
+  }
+  
+  .navbar .navbar-nav a:hover::after{
+    transform:scaleX(0.2);
+  }
+  
+  .about .row {
+    flex-wrap: wrap;
+  }
+  
+  .about .row .about-img img{
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+    }
+  
+    .about .row .content{
+      padding: 0;
+    }
+  
+    .about .row .content h3{
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+  
+    .about .row .content p{
+      font-size: 1.6rem;
+    }
+  
+  
+    .menu p {
+      font-size: 1.2rem;
+    }
+  
+    .contact .row {
+      flex-wrap: wrap;
+    }
+  
+    .contact .row .map {
+      height: 30rem;
+    }
+  
+    .contact .row form {
+      padding-top: 0;
+    };
+  }
+  
+   /*Mobile Phone*/
+  @media (max-width: 450px) {
+    html {
+      font-size: 55%;
+    }
+  }
+  .notice-bar {
+    position: fixed; /* Agar elemen tetap di posisi tengah layar */
+    top: 50%; /* Posisikan di tengah secara vertikal */
+    left: 50%; /* Posisikan di tengah secara horizontal */
+    transform: translate(-50%, -50%); /* Sesuaikan agar benar-benar di tengah */
+    background-color: #7c4611; /* Warna hijau */
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    z-index: 1000; /* Pastikan berada di atas elemen lainnya */
+    display: none; /* Tersembunyi secara default */
+  }
+    .whatsapp-float {
+      position: fixed; /* Agar tombol tetap melayang */
+      bottom: 20px; /* Jarak dari bawah */
+      right: 20px; /* Jarak dari kanan */
+      z-index: 1000; /* Pastikan berada di atas elemen lainnya */
+      background-color: #25d366; /* Warna hijau WhatsApp */
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  
+    .whatsapp-float img {
+      width: 50px; /* Ukuran ikon */
+      height: 50px;
+    }
+  
+    .whatsapp-float:hover {
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+      transform: scale(1.1); /* Efek zoom saat hover */
+      transition: 0.3s ease;
+    }
+    
+    .whatsapp-float {
+      position: fixed; /* Membuat tombol tetap di posisi */
+      bottom: 20px; /* Jarak dari bawah */
+      right: 20px; /* Jarak dari kanan */
+      z-index: 1000; /* Di atas elemen lain */
+      background-color: #25d366; /* Warna hijau khas WhatsApp */
+      border-radius: 50%; /* Membuat tombol bulat */
+      width: 60px; /* Lebar tombol */
+      height: 60px; /* Tinggi tombol */
+      display: flex; /* Agar ikon terpusat */
+      justify-content: center; /* Ikon di tengah horizontal */
+      align-items: center; /* Ikon di tengah vertikal */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Bayangan */
+      transition: transform 0.3s ease; /* Efek transisi saat hover */
+    }
+  
+    .whatsapp-float img {
+      width: 35px; /* Ukuran ikon WhatsApp */
+      height: 35px;
+    }
+  
+    .whatsapp-float:hover {
+      transform: scale(1.1); /* Efek zoom saat hover */
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); /* Bayangan lebih besar */
+    }
+    #notice-bar {
+      background-color: hwb(0 0% 0% / 0.904);  /* Menambahkan latar belakang merah */
+      color: #ffffff;            /* Mengubah warna teks menjadi putih */
+      padding: 10px;           /* Menambahkan sedikit padding agar teks tidak terlalu rapat */
+      text-align: center;      /* Memastikan teks berada di tengah */
+      font-weight: bold;       /* Menebalkan teks untuk membuatnya lebih terlihat */
+      border-radius: 3px;      /* Menambahkan sudut melengkung untuk elemen */
+      display: none;           /* Menyembunyikan notice bar secara default */
+    }
+    #notice-bar {
+      background-color: red;  /* Latar belakang merah untuk error */
+      color: white;            /* Teks berwarna putih */
+      padding: 10px;           /* Padding untuk teks lebih rapi */
+      text-align: center;      /* Teks di tengah */
+      font-weight: bold;       /* Teks tebal */
+      border-radius: 5px;      /* Sudut melengkung */
+      display: none;           /* Menyembunyikan notice bar secara default */
+    }
+    
+    #notice-bar.success {
+      background-color: green;  /* Latar belakang hijau untuk sukses */
+    }
+    
+    /* Mengatur html dan body untuk tinggi penuh dan margin nol */
+  html, body {
+    height: 100%;              /* Pastikan html dan body memiliki tinggi penuh */
+    margin: 0;                 /* Menghilangkan margin default */
+    padding: 0;
+  }
+  
+  /* Kontainer utama menggunakan Flexbox untuk tata letak vertikal */
+  body {
+    display: flex;
+    flex-direction: column;    /* Menyusun elemen dalam kolom */
+    justify-content: flex-start; /* Menjaga konten utama di bagian atas */
+    min-height: 100vh;          /* Halaman akan selalu memiliki tinggi setidaknya 100vh (viewport) */
+  }
+  
+  /* Menambahkan beberapa padding untuk form */
+  main {
+    flex: 1;  /* Konten utama mengisi ruang yang tersisa */
+    padding: 20px;  /* Menambahkan padding di sekitar form */
+  }
+  
+  /* Styling footer */
+  footer {
+    background-color: #333;    /* Warna latar belakang footer */
+    color: white;              /* Warna teks footer */
+    padding: 20px;             /* Padding untuk footer */
+    text-align: center;        /* Teks di tengah footer */
+    width: 100%;               /* Footer memenuhi lebar layar */
+    box-sizing: border-box;    /* Memastikan padding tidak mempengaruhi ukuran footer */
+    margin-top: auto;           /* Menjaga footer tetap di bawah konten */
+  }
+  
+  /* Styling untuk ikon sosial di dalam footer */
+  footer .social {
+    margin-bottom: 10px;        /* Memberikan jarak bawah pada div social */
+  }
+  
+  footer .social a {
+    color: white;              /* Mengubah warna ikon menjadi putih */
+    margin: 0 10px;             /* Memberikan jarak antar ikon */
+    font-size: 20px;            /* Ukuran font untuk ikon */
+  }
+  
+  footer .social a:hover {
+    color: #ff6347;             /* Memberikan efek hover pada ikon sosial */
+  }
+  
+  /* Styling untuk link dan credit di footer */
+  footer .links a, footer .credit a {
+    color: white;              /* Warna link di footer */
+    text-decoration: none;     /* Menghilangkan garis bawah pada link */
+    margin: 0 10px;            /* Memberikan jarak antar link */
+  }
+  
+  footer .links a:hover, footer .credit a:hover {
+    color: #ff6347;             /* Memberikan efek hover pada link */
+  }
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 8px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.submit-btn {
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+}
+
+.notification {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.notification.error {
+  background-color: #ffe6e6;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+}
+
+.notification.success {
+  background-color: #e6ffe6;
+  color: #006600;
+  border: 1px solid #006600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+    padding: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+  }
+  
+  .submit-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
+  
+    
+  
+  
+  
